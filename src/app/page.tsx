@@ -26,7 +26,7 @@ import {
 export default function PureHealthHome() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const partnerUrl = "https://superpower.com/welcome";
+  const partnerUrl = "https://partners.superpower.com/derek-cole";
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
