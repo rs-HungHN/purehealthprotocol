@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 
@@ -6,7 +6,6 @@ export default function GoPage() {
   const [countdown, setCountdown] = useState(2);
 
   useEffect(() => {
-    // Đếm ngược 2 giây rồi tự động chuyển hướng sạch
     const timer = setInterval(() => {
       setCountdown((prev) => {
         if (prev <= 1) {
@@ -22,34 +21,74 @@ export default function GoPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-6 text-center">
-      <div className="max-w-md w-full p-8 rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl">
-        <div className="w-12 h-12 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center mx-auto mb-4 border border-cyan-500/30">
-          <div className="w-5 h-5 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin" />
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-4 sm:p-6 text-center antialiased selection:bg-cyan-500 selection:text-slate-950">
+      <div className="max-w-md w-full p-6 sm:p-8 rounded-3xl bg-slate-900/95 border border-slate-800 shadow-2xl backdrop-blur relative overflow-hidden">
+        {/* Glow accent */}
+        <div className="absolute -top-16 -left-16 w-36 h-36 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-16 -right-16 w-36 h-36 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
+
+        {/* Live Partner Status */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/80 text-[11px] font-semibold text-cyan-400 mb-5">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          OFFICIAL VERIFIED PARTNER PORTAL
         </div>
 
-        <span className="text-[11px] uppercase font-bold tracking-widest text-cyan-400 bg-cyan-950/60 px-3 py-1 rounded-full border border-cyan-800/50">
-          Verified Clinical Protocol
-        </span>
-
-        <h1 className="text-xl font-bold text-white mt-3 mb-2">
-          Connecting to Superpower Health
+        <h1 className="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight">
+          Superpower Health Access
         </h1>
-
-        <p className="text-slate-400 text-xs mb-6 leading-relaxed">
-          Redirecting to official 100+ biomarker assessment portal in {countdown}s...
+        <p className="text-xs sm:text-sm text-slate-400 mb-5">
+          Pre-applied partner privilege for 2026 comprehensive diagnostics.
         </p>
 
+        {/* Value & Trust Badges */}
+        <div className="grid grid-cols-2 gap-2.5 mb-6 text-left">
+          <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-2.5">
+            <div className="w-6 h-6 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
+              ✓
+            </div>
+            <div>
+              <div className="text-xs font-bold text-slate-200">100+ Biomarkers</div>
+              <div className="text-[10px] text-slate-400">Cardio, Hormones & Longevity</div>
+            </div>
+          </div>
+
+          <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-2.5">
+            <div className="w-6 h-6 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
+              $
+            </div>
+            <div>
+              <div className="text-xs font-bold text-slate-200">HSA / FSA Eligible</div>
+              <div className="text-[10px] text-slate-400">Zero Hidden Doctor Fees</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Dynamic Progress Bar */}
+        <div className="w-full bg-slate-950 rounded-full h-1.5 mb-3 overflow-hidden border border-slate-800">
+          <div
+            className="bg-gradient-to-r from-cyan-400 to-indigo-500 h-full transition-all duration-1000 ease-linear rounded-full"
+            style={{ width: ${((3 - countdown) / 2) * 100}% }}
+          />
+        </div>
+
+        <p className="text-[11px] text-slate-400 mb-5">
+          Redirecting securely to Superpower in{" "}
+          <span className="text-cyan-400 font-bold">{countdown}s</span>...
+        </p>
+
+        {/* Direct Button */}
         <a
           href="https://partners.superpower.com/derek-cole"
           rel="noreferrer"
-          className="inline-flex items-center justify-center w-full py-3 px-6 rounded-xl bg-gradient-to-r from-cyan-400 to-sky-400 text-slate-950 font-bold text-sm hover:opacity-95 transition-all shadow-lg shadow-cyan-400/20"
+          className="inline-flex items-center justify-center w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-400 text-slate-950 font-bold text-sm hover:opacity-95 transition-all shadow-lg shadow-cyan-500/20 active:scale-[0.98]"
         >
-          Click Here to Continue Now →
+          Claim Access Now &rarr;
         </a>
 
-        <div className="mt-6 pt-4 border-t border-slate-800/80 text-[11px] text-slate-500">
-          PureHealth Protocol &bull; Independent Clinical Index
+        <div className="mt-5 pt-3 border-t border-slate-800/80 text-[10px] text-slate-500 flex items-center justify-center gap-2">
+          <span>CLIA-Certified Labs (Labcorp/Quest)</span>
+          <span>&bull;</span>
+          <span>PureHealth Protocol</span>
         </div>
       </div>
     </div>

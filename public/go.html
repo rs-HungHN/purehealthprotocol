@@ -1,46 +1,105 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connecting to Superpower Health...</title>
-  <!-- Gửi Referrer chính là domain purehealthprotocol.shop, triệt tiêu hoàn toàn dấu vết Google Ads / gclid -->
+  <title>Connecting to Superpower Health | PureHealth Protocol</title>
   <meta name="referrer" content="origin">
-  <meta http-equiv="refresh" content="0; url=https://partners.superpower.com/derek-cole">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-color: #020617;
-      color: #94a3b8;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    @keyframes progressAnim {
+      0% { width: 10%; }
+      100% { width: 100%; }
     }
-    .spinner {
-      width: 42px;
-      height: 42px;
-      border: 3px solid rgba(56, 189, 248, 0.2);
-      border-top-color: #38bdf8;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin-bottom: 16px;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+    .progress-bar-fill {
+      animation: progressAnim 2s linear forwards;
     }
   </style>
 </head>
-<body>
-  <div class="spinner"></div>
-  <p style="font-size: 15px; font-weight: 500; color: #cbd5e1;">Redirecting to Superpower Health Official Protocol...</p>
-  <p style="font-size: 12px; color: #64748b;">Verified Partner: PureHealth Protocol</p>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 text-center antialiased selection:bg-cyan-500 selection:text-slate-950">
+
+  <div class="max-w-md w-full p-6 sm:p-8 rounded-3xl bg-slate-900/95 border border-slate-800 shadow-2xl backdrop-blur relative overflow-hidden">
+    <!-- Glow accent -->
+    <div class="absolute -top-16 -left-16 w-36 h-36 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-16 -right-16 w-36 h-36 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- Live Partner Status -->
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/80 text-[11px] font-semibold text-cyan-400 mb-5">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      OFFICIAL VERIFIED PARTNER PORTAL
+    </div>
+
+    <h1 class="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight">
+      Superpower Health Access
+    </h1>
+    <p class="text-xs sm:text-sm text-slate-400 mb-5">
+      Pre-applied partner privilege for 2026 comprehensive diagnostics.
+    </p>
+
+    <!-- Value & Trust Badges -->
+    <div class="grid grid-cols-2 gap-2.5 mb-6 text-left">
+      <div class="p-3 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-2.5">
+        <div class="w-6 h-6 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
+          ✓
+        </div>
+        <div>
+          <div class="text-xs font-bold text-slate-200">100+ Biomarkers</div>
+          <div class="text-[10px] text-slate-400">Cardio, Hormones & Longevity</div>
+        </div>
+      </div>
+
+      <div class="p-3 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-2.5">
+        <div class="w-6 h-6 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
+          $
+        </div>
+        <div>
+          <div class="text-xs font-bold text-slate-200">HSA / FSA Eligible</div>
+          <div class="text-[10px] text-slate-400">Zero Hidden Doctor Fees</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic Progress Bar -->
+    <div class="w-full bg-slate-950 rounded-full h-1.5 mb-3 overflow-hidden border border-slate-800">
+      <div class="bg-gradient-to-r from-cyan-400 to-indigo-500 h-full rounded-full progress-bar-fill"></div>
+    </div>
+
+    <p class="text-[11px] text-slate-400 mb-5">
+      Redirecting securely to Superpower in <span id="timer" class="text-cyan-400 font-bold">2s</span>...
+    </p>
+
+    <!-- Direct Button -->
+    <a
+      id="cta-btn"
+      href="https://partners.superpower.com/derek-cole"
+      rel="noreferrer"
+      class="inline-flex items-center justify-center w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-400 text-slate-950 font-bold text-sm hover:opacity-95 transition-all shadow-lg shadow-cyan-500/20 active:scale-[0.98]"
+    >
+      Claim Access Now &rarr;
+    </a>
+
+    <div class="mt-5 pt-3 border-t border-slate-800/80 text-[10px] text-slate-500 flex items-center justify-center gap-2">
+      <span>CLIA-Certified Labs (Labcorp/Quest)</span>
+      <span>&bull;</span>
+      <span>PureHealth Protocol</span>
+    </div>
+  </div>
+
   <script>
-    // Chuyển hướng tức thì, cắt sạch gclid và google referrer
-    window.location.replace("https://partners.superpower.com/derek-cole");
+    var countdown = 2;
+    var timerEl = document.getElementById('timer');
+    var timer = setInterval(function() {
+      countdown--;
+      if (timerEl) timerEl.textContent = countdown + 's';
+      if (countdown <= 0) {
+        clearInterval(timer);
+        window.location.replace('https://partners.superpower.com/derek-cole');
+      }
+    }, 1000);
   </script>
 </body>
 </html>
