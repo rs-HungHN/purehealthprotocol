@@ -48,8 +48,14 @@ export default function PureHealthHome() {
       <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-xs">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-600/20">
-              <Activity className="w-5 h-5 text-white" />
+            <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-blue-600/30 shadow-md shadow-blue-600/15 shrink-0">
+              <Image
+                src="/logo.png"
+                alt="PureHealth Protocol Logo"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
             <div>
               <span className="text-xl font-black tracking-tight text-slate-900">
@@ -631,8 +637,13 @@ export default function PureHealthHome() {
       <footer className="w-full bg-white border-t border-slate-200 py-12 px-4 sm:px-6 text-slate-600 text-xs">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-md bg-blue-600 text-white flex items-center justify-center font-bold text-xs">
-              P
+            <div className="relative w-6 h-6 rounded-md overflow-hidden border border-blue-600/30 shrink-0">
+              <Image
+                src="/logo.png"
+                alt="PureHealth Protocol Logo"
+                fill
+                className="object-cover"
+              />
             </div>
             <span className="font-bold text-slate-900 text-sm">PureHealth Protocol</span>
           </div>
