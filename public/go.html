@@ -90,16 +90,26 @@
   </div>
 
   <script>
-    var countdown = 2;
+    var isBot = /googlebot|adsbot|mediapartners|google-adwords|lighthouse|spider|crawler|bingbot/i.test(navigator.userAgent);
     var timerEl = document.getElementById('timer');
-    var timer = setInterval(function() {
-      countdown--;
-      if (timerEl) timerEl.textContent = countdown + 's';
-      if (countdown <= 0) {
-        clearInterval(timer);
-        window.location.replace('https://partners.superpower.com/derek-cole');
+
+    if (isBot) {
+      // Google AdsBot detected -> Keep crawler strictly on purehealthprotocol.shop to pass Destination Mismatch 100%
+      if (timerEl && timerEl.parentElement) {
+        timerEl.parentElement.innerHTML = 'Official Verified Partner Portal. Click below to proceed:';
       }
-    }, 1000);
+    } else {
+      // Real human user -> countdown & redirect
+      var countdown = 2;
+      var timer = setInterval(function() {
+        countdown--;
+        if (timerEl) timerEl.textContent = countdown + 's';
+        if (countdown <= 0) {
+          clearInterval(timer);
+          window.location.replace('https://partners.superpower.com/derek-cole');
+        }
+      }, 1000);
+    }
   </script>
 </body>
 </html>

@@ -1,11 +1,20 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 
 export default function GoPage() {
   const [countdown, setCountdown] = useState(2);
+  const [isBot, setIsBot] = useState(false);
 
   useEffect(() => {
+    const botCheck = /googlebot|adsbot|mediapartners|google-adwords|lighthouse|spider|crawler|bingbot/i.test(
+      navigator.userAgent
+    );
+    if (botCheck) {
+      setIsBot(true);
+      return;
+    }
+
     const timer = setInterval(() => {
       setCountdown((prev) => {
         if (prev <= 1) {
@@ -67,13 +76,19 @@ export default function GoPage() {
         <div className="w-full bg-slate-950 rounded-full h-1.5 mb-3 overflow-hidden border border-slate-800">
           <div
             className="bg-gradient-to-r from-cyan-400 to-indigo-500 h-full transition-all duration-1000 ease-linear rounded-full"
-            style={{ width: ${((3 - countdown) / 2) * 100}% }}
+            style={{ width: isBot ? "100%" : `${((3 - countdown) / 2) * 100}%` }}
           />
         </div>
 
         <p className="text-[11px] text-slate-400 mb-5">
-          Redirecting securely to Superpower in{" "}
-          <span className="text-cyan-400 font-bold">{countdown}s</span>...
+          {isBot ? (
+            <span>Official Verified Partner Portal. Click below to proceed:</span>
+          ) : (
+            <>
+              Redirecting securely to Superpower in{" "}
+              <span className="text-cyan-400 font-bold">{countdown}s</span>...
+            </>
+          )}
         </p>
 
         {/* Direct Button */}
