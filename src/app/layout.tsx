@@ -17,6 +17,15 @@ export const metadata: Metadata = {
   title: "PureHealth Protocol | Advanced 100+ Biomarker Longevity Protocol",
   description: "Identify hidden biological risks, cellular aging, and metabolic deficiencies. Take the 60-Second AI Health Assessment for personalized biomarker protocols.",
   keywords: "blood test, biomarker scanning, longevity protocol, preventative healthcare, full body blood test",
+  icons: {
+    icon: [
+      { url: "/favicon.ico?v=2", sizes: "any" },
+      { url: "/icon-32.png?v=2", sizes: "32x32", type: "image/png" },
+      { url: "/icon.png?v=2", sizes: "192x192", type: "image/png" }
+    ],
+    shortcut: "/favicon.ico?v=2",
+    apple: "/apple-icon.png?v=2"
+  },
 };
 
 export default function RootLayout({
@@ -30,6 +39,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png?v=2" />
+        <link rel="apple-touch-icon" href="/apple-icon.png?v=2" />
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id="
