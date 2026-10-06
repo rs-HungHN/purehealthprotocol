@@ -32,71 +32,78 @@ export default function GoPage() {
   return (
     <div className="relative min-h-screen bg-[#f8fafc] text-slate-800 font-sans overflow-hidden flex flex-col justify-between antialiased selection:bg-emerald-500 selection:text-white">
       {/* ========================================================= */}
-      {/* LỚP NỀN ĐỆM ĐỒNG BỘ 100% GIAO DIỆN SUPERPOWER (BLURRED BACKDROP) */}
+
       {/* ========================================================= */}
-      <div className="absolute inset-0 select-none pointer-events-none opacity-45 blur-[2.5px] scale-[1.01] transition-opacity duration-700">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between border-b border-slate-200">
-          <div className="flex items-center gap-8">
-            <div className="flex items-center gap-2 font-black text-xl text-slate-900 tracking-tight">
-              <span className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold">🧬</span>
-              <span>Superpower</span>
-            </div>
-            <div className="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-600">
-              <span className="text-emerald-600">Protocol</span>
-              <span>100+ Biomarkers</span>
-              <span>Quest Labs</span>
-              <span>Longevity</span>
-            </div>
+      {/* LỚP NỀN ĐỆM ĐỒNG BỘ 100% GIAO DIỆN SUPERPOWER THẬT */}
+      {/* ========================================================= */}
+      <div className="absolute inset-0 select-none pointer-events-none opacity-45 blur-[2px] scale-[1.01] transition-opacity duration-700">
+        <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between border-b border-slate-100">
+          <div className="flex items-center gap-6 text-xs font-medium text-slate-600">
+            <span>What we test</span>
+            <span>Reviews</span>
+            <span>FAQs</span>
+            <span>For Employers</span>
           </div>
-          <div className="flex items-center gap-4 text-xs font-bold">
-            <span className="px-4 py-2 rounded-full bg-emerald-600 text-white shadow-sm">
-              Join Membership ($199/yr)
+          <div className="font-black text-2xl tracking-tighter text-slate-900 font-sans">
+            superpower
+          </div>
+          <div className="flex items-center gap-4 text-xs font-semibold">
+            <span className="text-slate-700">Log in</span>
+            <span className="px-5 py-2 rounded-full bg-slate-950 text-white font-bold">
+              Become a member
             </span>
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-4 pt-12 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-4">
-            🛡️ Certified Quest Diagnostics Labs &bull; 100% HSA/FSA Eligible
+        <div className="max-w-5xl mx-auto px-6 pt-10 grid grid-cols-2 gap-10 items-center">
+          <div className="text-left">
+            <div className="flex items-center gap-2 text-xs text-slate-600 mb-3">
+              <span className="font-bold text-emerald-600">★★★★★</span>
+              <span className="text-[11px] font-medium">4.6 on Trustpilot &bull; 64,000+ members</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-3">
+              Know what's really going on with your health
+            </h2>
+            <p className="text-slate-500 text-xs leading-relaxed mb-5">
+              Turn your blood test results into personalized insights, simple protocols, and action.
+            </p>
+            <div className="space-y-2 text-xs text-slate-700 mb-6">
+              <div className="flex items-center gap-2">
+                <span className="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px]">✓</span>
+                <span>Thyroid, cortisol, testosterone and estrogen, all included</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px]">✓</span>
+                <span>150+ biomarkers, not the 10 to 15 in an annual physical</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px]">✓</span>
+                <span>Blood draws at 2,000+ locations or at-home</span>
+              </div>
+            </div>
+            <div className="inline-block px-6 py-2.5 rounded-full bg-slate-900 text-white text-xs font-bold">
+              Get my health baseline
+            </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-3">
-            Measure 100+ Biomarkers. <span className="text-emerald-600">Live Healthier, Longer.</span>
-          </h2>
-          <p className="text-slate-500 text-sm max-w-xl mx-auto mb-8">
-            Actionable AI-driven preventive longevity protocols tailored to your biological data.
-          </p>
 
-          <div className="grid grid-cols-4 gap-3 text-left max-w-3xl mx-auto">
-            <div className="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
-              <div className="text-[10px] text-slate-400 font-bold uppercase">Cardiovascular</div>
-              <div className="font-bold text-sm text-slate-900 mt-1">ApoB & hs-CRP</div>
-              <div className="text-[10px] text-emerald-600 mt-0.5">Optimal Range</div>
+          <div className="p-6 rounded-3xl bg-gradient-to-br from-amber-700/80 via-orange-800/80 to-stone-900 text-white shadow-xl relative overflow-hidden h-80 flex flex-col justify-between text-left">
+            <div className="p-4 rounded-2xl bg-white/10 backdrop-blur border border-white/20 inline-block w-40">
+              <div className="text-xs text-slate-200">Ferritin</div>
+              <div className="text-3xl font-extrabold mt-0.5 flex items-center gap-1">
+                64 <span className="text-xs font-normal">μg/L ↗</span>
+              </div>
             </div>
-            <div className="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
-              <div className="text-[10px] text-slate-400 font-bold uppercase">Metabolic</div>
-              <div className="font-bold text-sm text-slate-900 mt-1">HbA1c & Insulin</div>
-              <div className="text-[10px] text-emerald-600 mt-0.5">Optimal Range</div>
-            </div>
-            <div className="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
-              <div className="text-[10px] text-slate-400 font-bold uppercase">Hormones</div>
-              <div className="font-bold text-sm text-slate-900 mt-1">Testosterone & DHEA</div>
-              <div className="text-[10px] text-emerald-600 mt-0.5">Balanced</div>
-            </div>
-            <div className="p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
-              <div className="text-[10px] text-slate-400 font-bold uppercase">Longevity</div>
-              <div className="font-bold text-sm text-slate-900 mt-1">Biological Age: 31</div>
-              <div className="text-[10px] text-emerald-600 mt-0.5">5.2 Years Younger</div>
+            <div className="p-3 rounded-2xl bg-black/40 backdrop-blur border border-white/10 text-xs flex items-center gap-3">
+              <div className="text-amber-400 font-serif font-bold text-center leading-tight">Clinicians'<br/>Choice</div>
+              <div className="text-[10px] text-slate-300">100+ clinicians shared this with their patients without compensation.</div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="w-full h-4"></div>
-
-      {/* ========================================================= */}
-      {/* LỚP FOREGROUND: MODAL KÍNH MỜ SUPERPOWER HEALTH */}
-      {/* ========================================================= */}
-      <div className="relative z-10 w-full flex items-center justify-center p-4">
+<div className="w-full h-4"></div>
+{/* ========================================================= */}
+<div className="relative z-10 w-full flex items-center justify-center p-4">
         <div className="max-w-md w-full p-6 sm:p-8 rounded-3xl bg-white/95 border border-emerald-200/90 shadow-[0_20px_60px_-15px_rgba(16,185,129,0.18)] backdrop-blur-md relative overflow-hidden text-center transition-all duration-300">
           <div className="absolute -top-12 -left-12 w-32 h-32 bg-emerald-500/15 rounded-full blur-2xl pointer-events-none" />
           <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-teal-500/15 rounded-full blur-2xl pointer-events-none" />
